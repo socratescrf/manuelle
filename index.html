@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manuellealf 💖</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff0f5;
+            text-align: center;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #ff1493;
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 22px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .message {
+            background-color: #fff;
+            border: 3px solid #ff1493;
+            padding: 30px;
+            display: inline-block;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .button {
+            font-size: 22px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 10px;
+        }
+
+        .yes {
+            background-color: #ff69b4;
+            color: white;
+        }
+
+        .yes:hover {
+            background-color: #ff1493;
+        }
+
+        .no {
+            background-color: #ccc;
+            color: black;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>Isso é pouco mas quero te perguntar algo.💖</h1>
+    <div class="message">
+        <p>Eu sei que errei, e não há nada que eu possa dizer para apagar isso. O que aconteceu foi uma falha minha, e eu assumo toda a responsabilidade. Eu entendo que, para você, o que mais importa é a confiança que foi quebrada e eu te machuquei. 
+            Quero mudar tudo por voce meu amor, de verdade mesmo, preciso de voce. Quero te perguntar:
+        </p>
+        <h2>💌Deixa eu mudar tudo e te fazer feliz?</h2>
+        <div class="buttons">
+            <button class="button yes" onclick="openGallery()">Sim, meu amor! </button>
+            <button class="button no" id="noButton" onmouseover="moveNoButton()">Não, nao quero nada 😭</button>
+        </div>
+    </div>
+
+    <script>
+        function openGallery() {
+            localStorage.setItem("showHearts", "true");
+            window.location.href = "galeria.html";
+        }
+
+        function moveNoButton() {
+            let button = document.getElementById('noButton');
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+        }
+        
+
+    </script>
+</body>
+</html>
