@@ -78,22 +78,29 @@
     </div>
 
     <script>
-        document.getElementById("no-button").onclick = function() {
-            let x = Math.random() * window.innerWidth; // Posição aleatória X
-            let y = Math.random() * window.innerHeight; // Posição aleatória Y
+       function createHeart() {
+        let heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = "100vh";
+        heart.style.fontSize = Math.random() * 20 + 20 + "px";
+        document.body.appendChild(heart);
 
-            document.getElementById("no-button").style.position = "absolute";
-            document.getElementById("no-button").style.left = `${x}px`;
-            document.getElementById("no-button").style.top = `${y}px`;
-        };
-
-        // Código para o botão "Sim" redirecionar
-        document.getElementById("yes-button").onclick = function() {
-            window.location.href = "galeria.html"; // Redirecionar para a galeria
-        };
-    </script>
-    <!-- Fim do código JavaScript -->
-
+        if (localStorage.getItem("showHearts") === "true") {
+    localStorage.removeItem("showHearts");
+    for (let i = 0; i < 30; i++) {
+        setTimeout(createHeart, i * 100);
+    }
+}
+        setTimeout(() => {
+            heart.remove();
+        }, 3000);
+    }
+    setInterval(createHeart, 300);
+        function goBack() {
+            window.location.href = "index.html";
+        }
     </script>
 </body>
 </html>
