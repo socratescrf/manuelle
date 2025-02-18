@@ -11,7 +11,7 @@
             text-align: center;
             padding: 50px;
             position: relative;
-            overflow: scroll;
+            overflow: hidden;
         }
 
         h1 {
@@ -78,29 +78,20 @@
     </div>
 
     <script>
-       function createHeart() {
-        let heart = document.createElement("div");
-        heart.innerHTML = "❤️";
-        heart.className = "heart";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.top = "100vh";
-        heart.style.fontSize = Math.random() * 20 + 20 + "px";
-        document.body.appendChild(heart);
-
-        if (localStorage.getItem("showHearts") === "true") {
-    localStorage.removeItem("showHearts");
-    for (let i = 0; i < 30; i++) {
-        setTimeout(createHeart, i * 100);
-    }
-}
-        setTimeout(() => {
-            heart.remove();
-        }, 3000);
-    }
-    setInterval(createHeart, 300);
-        function goBack() {
-            window.location.href = "index.html";
+        function openGallery() {
+            localStorage.setItem("showHearts", "true");
+            window.location.href = "galeria.html";
         }
+
+        function moveNoButton() {
+            let button = document.getElementById('noButton');
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+        }
+        
+
     </script>
 </body>
 </html>
