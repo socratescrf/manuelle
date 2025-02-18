@@ -78,19 +78,21 @@
     </div>
 
     <script>
-        function openGallery() {
-            localStorage.setItem("showHearts", "true");
-            window.location.href = "galeria.html";
-        }
+        document.getElementById("no-button").onclick = function() {
+            let x = Math.random() * window.innerWidth; // Posição aleatória X
+            let y = Math.random() * window.innerHeight; // Posição aleatória Y
 
-        function moveNoButton() {
-            let button = document.getElementById('noButton');
-            let x = Math.random() * (window.innerWidth - 100);
-            let y = Math.random() * (window.innerHeight - 50);
-            button.style.left = x + 'px';
-            button.style.top = y + 'px';
-        }
-        
+            document.getElementById("no-button").style.position = "absolute";
+            document.getElementById("no-button").style.left = `${x}px`;
+            document.getElementById("no-button").style.top = `${y}px`;
+        };
+
+        // Código para o botão "Sim" redirecionar
+        document.getElementById("yes-button").onclick = function() {
+            window.location.href = "galeria.html"; // Redirecionar para a galeria
+        };
+    </script>
+    <!-- Fim do código JavaScript -->
 
     </script>
 </body>
